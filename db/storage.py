@@ -85,7 +85,7 @@ def save_results(results_df: pd.DataFrame, db_path: Path = _DEFAULT_DB_PATH) -> 
     results_df:
         Output of engine.detect_beacons().
     db_path:
-        Path to the SQLite database file.  Created if absent.
+        Path to the SQLite database file. Created if absent.
 
     Returns
     -------
@@ -104,6 +104,7 @@ def save_results(results_df: pd.DataFrame, db_path: Path = _DEFAULT_DB_PATH) -> 
     run_ts = datetime.now(timezone.utc).isoformat()
 
     # Prepare each scan result as a tuple matching the database column order.
+    # Missing values use the defaults specified in row.get().
     rows = []
     for _, row in results_df.iterrows():
         rows.append(
