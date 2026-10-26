@@ -1,3 +1,32 @@
+import sys
+from pathlib import Path
+
+# Add root directory to python path so 'detector' can be imported
+root_dir = Path(__file__).resolve().parent.parent
+if str(root_dir) not in sys.path:
+    sys.path.insert(0, str(root_dir))
+
+import streamlit as st
+import pandas as pd
+import plotly.express as px
+from detector import analyze_proxy_logs, LOCAL_IOC_BLOCKLIST
+import sys
+from pathlib import Path
+
+root_dir = Path(__file__).resolve().parent.parent
+if str(root_dir) not in sys.path:
+    sys.path.insert(0, str(root_dir))
+
+import streamlit as st
+import pandas as pd
+import plotly.express as px
+from detector import analyze_proxy_logs, LOCAL_IOC_BLOCKLIST
+import sys
+from pathlib import Path
+
+root_dir = Path(__file__).resolve().parent.parent
+if str(root_dir) not in sys.path:
+    sys.path.insert(0, str(root_dir))
 import streamlit as st
 import pandas as pd
 import plotly.express as px
